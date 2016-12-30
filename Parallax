@@ -1,0 +1,35 @@
+To add Parallax effect, do this:
+
+    1. Register the widget area. Lets call it "Top Parallax"
+    
+    2. Hook the widget areas into genesis_after_header (in the temaplte you want the parallax to happen (front-page, single, etc)
+    
+    3. Then, create a .js folder (if your child theme doesn't alreayd have it)
+    
+    4. Within the .js folder, create a file and save it a parallax.js
+    
+    5. Add this code to the file and save:
+  ############################ code below ###################################
+    
+    jQuery(function( $ ){
+
+	$(window).scroll(function(){
+
+		scrolltop = $(window).scrollTop()
+		scrollwindow = scrolltop + $(window).height();
+
+		// Top Parallax Section Below Header
+		$(".top-parallax").css("backgroundPosition", "0px " + -(scrolltop/6) + "px");
+
+	});
+
+});
+
+  ############################ code above ###################################  
+    
+   6. Set the background image for the section via CSS. In this case something like:
+   
+   .top-parallax {
+    background-image: url(http://example.com/wp-content/uploads/2016/12/example-image.jpg)
+}
+ 
