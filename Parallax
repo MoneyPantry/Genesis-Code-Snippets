@@ -33,3 +33,10 @@ To add Parallax effect, do this:
     background-image: url(http://example.com/wp-content/uploads/2016/12/example-image.jpg)
 }
  
+
+#### Notes:
+
+Replace the "top-parallax" with the name of your widget. That's how we specify the widget areas for parallax to happen in.
+   
+Use CSS to style the widget as you would any other normal widget.
+    
