@@ -1,0 +1,26 @@
+// What it does: Registers a widget
+// Where it goes: function.php (or create a custom-function.php)
+
+// Lets register our widget
+add_action( 'genesis_after_header', 'widget_name' );
+function widget_name() {
+genesis_widget_area( 'widget-name', array(
+        'before' => '<div class="widget-name"><div class="wrap">',
+        'after'  => '</div></div>',
+    ) );
+}
+
+
+// What it does: Hooks the above widget
+// Where it goes: If home widget, then  goes to front-page.php. If single post widget, then single.php
+
+// Lets hook our widget
+genesis_register_sidebar( array(
+    'id'          => 'widget-name',
+    'name'        => __( 'Widget Name', 'themename' ),
+    'description' => __( 'Widget Name widget for homepage.', 'themename' ),
+) );
+
+
+
+
