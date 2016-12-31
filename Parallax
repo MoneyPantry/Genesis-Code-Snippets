@@ -1,8 +1,8 @@
 To add Parallax effect, do this:
 
-    1. Register the widget area. Lets call it "Top Parallax"
+    1. Register the widget area. Lets create two - "Top Parallax" and "Bottom Parallax"
     
-    2. Hook the widget areas into genesis_after_header (in the temaplte you want the parallax to happen (front-page, single, etc)
+    2. Hook the widget areas into genesis_after_header and genesis_before_footer (in the page template you want the parallax to happen (front-page, single, etc)
     
     3. Then, create a .js folder (if your child theme doesn't alreayd have it)
     
@@ -11,15 +11,23 @@ To add Parallax effect, do this:
     5. Add this code to the file and save:
   ############################ code below ###################################
     
-    jQuery(function( $ ){
+  jQuery(function( $ ){
 
 	$(window).scroll(function(){
 
 		scrolltop = $(window).scrollTop()
 		scrollwindow = scrolltop + $(window).height();
 
-		// Top Parallax Section Below Header
+		// Section Below Header
 		$(".top-parallax").css("backgroundPosition", "0px " + -(scrolltop/6) + "px");
+
+		// Section Above Footer
+		if( scrollwindow > $(".bottom-parallax").offset().top ) {
+
+			backgroundscroll = scrollwindow - $(".bottom-parallax").offset().top;
+			$(".bottom-parallax").css("backgroundPosition", "0px " + -(backgroundscroll/6) + "px");
+
+		}
 
 	});
 
@@ -36,7 +44,7 @@ To add Parallax effect, do this:
 
 #### Notes:
 
-Replace the "top-parallax" with the name of your widget. That's how we specify the widget areas for parallax to happen in.
+Replace the "top-parallax" and "bottom-parallax" with the name of your widgets. That's how we specify the widget areas for parallax to happen in.
    
 Use CSS to style the widget as you would any other normal widget.
     
