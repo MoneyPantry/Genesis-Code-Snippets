@@ -1,0 +1,9 @@
+//* Begin Customize the credits
+add_filter( 'genesis_footer_creds_text', 'sp_footer_creds_text' );
+function sp_footer_creds_text() {
+	echo '<div class="creds"><p>';
+	echo ' 
+YOUR CUSTOMIZED TEXT GOES HERE
+';
+	echo '</p></div>';
+}
