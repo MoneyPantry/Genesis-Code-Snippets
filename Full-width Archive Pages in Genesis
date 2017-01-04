@@ -1,0 +1,12 @@
+You can use the layout setting in your post/page edit section for individual posts and archive pages to make them full-width. But what if you want to make all archive pages full-width and you don't want to have to go back and edit them all one by one?
+
+You can use this code to force full-width layout on all archive pages:
+
+//* Force full width layout on all archive pages
+add_filter( 'genesis_site_layout', 'full_width_archives' );
+function full_width_archives( $opt ) {
+if ( is_archive() ) {
+    $opt = 'full-width-content'; 
+    return $opt;
+    } 
+}
