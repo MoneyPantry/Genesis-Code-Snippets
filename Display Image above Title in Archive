@@ -1,0 +1,5 @@
+To move the post's image above the title in archive pages, add this code to your function.php file.
+
+// Move the post image above title in archive/category pages.
+remove_action( 'genesis_entry_content', 'genesis_do_post_image', 8 );
+add_action( 'genesis_entry_header', 'genesis_do_post_image', 1 );
