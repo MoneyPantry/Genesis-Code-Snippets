@@ -1,0 +1,23 @@
+To customize the post info displayed under the title of the post, add this code to your function.php:
+
+
+
+//* Customize the post info function
+add_filter( 'genesis_post_info', 'sp_post_info_filter' );
+function sp_post_info_filter($post_info) {
+if ( !is_page() ) {
+	$post_info = '[post_date] by [post_author_posts_link] [post_comments] [post_edit]';
+	return $post_info;
+}}
+
+If you'd rather only display when the post was last updated instead of its original published date, use this code:
+
+//* Lets Customize the post info function
+add_filter( 'genesis_post_info', 'post_info_filter', 4  );
+function post_info_filter($post_info) {
+if (!is_page()) {
+ $post_info = 'Last Updated '  .the_modified_date('F j, Y', '', '', false);
+ return $post_info;
+}}
+
+You can change the "Last Updated" to any other text you wish.
