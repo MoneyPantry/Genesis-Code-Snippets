@@ -1,0 +1,4 @@
+To remove the post meta (the bit at the bottom of the post that shows the category and tags of the post), add this code to your function.php file. This will remove Post Meta everywhere on your site (single posts, arhcive, home)
+
+//* Remove the post meta function
+remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
