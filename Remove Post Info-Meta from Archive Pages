@@ -1,0 +1,9 @@
+If you don't want to the post info (author info, time stamp, etc) from the posts excerpt in arhcive pages, add this code to your function.php file.
+
+// Remove Post Info, Post Meta from Archive Pages
+function remove_post_info() {
+	if (is_archive()) {
+		remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
+		}
+}
+add_action ( 'genesis_entry_header', 'remove_post_info' );
