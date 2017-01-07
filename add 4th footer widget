@@ -1,0 +1,7 @@
+Most Genesis child themes by default have 3 footer widgets. To add a 4th one, simply add this code to your function.php file:
+
+//* Add support for 4-column footer widgets
+add_theme_support( 'genesis-footer-widgets', 4 );
+
+Then drag and drop any widget into it from your WP Appearance Widgets dashboard.
+Note: You may need to add some CSS to your 4th footer widget.
