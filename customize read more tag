@@ -1,0 +1,12 @@
+To customize the Read More tag in your Genesis child theme, simply add this code to your functin.php file:
+
+//* Customize Read More text
+add_filter( 'get_the_content_more_link', 'modify_read_more_text' );
+function modify_read_more_text() {
+    return '... <a class="more-link" href="' . get_permalink() . '">Continue...</a>';
+}
+
+
+Note: This will change the text from default "Read More" to "Continue...".
+You can change "Continue..." to any term you like (Read the post, continue reading, read the entire post, etc).
+
