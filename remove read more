@@ -1,0 +1,7 @@
+If you like to remove ethe "read more" text that shows in your blog and archive pages, add this code to your function.phop file:
+
+//# Remove read more
+add_filter( 'get_the_content_more_link', 'remove_read_more' );
+function remove_read_more() {
+return '';
+}
